@@ -19,23 +19,34 @@ After cloning this repository, follow these steps to configure your application:
    ```ruby
    Lockbox.generate_key
    ```
+   
+3. Generate an ARE Key by running
+    ```bash
+    bin/rails db:encryption:init
+    ```
 
-3. Add the generated key to your credentials:
+4. Add the generated keys to your credentials:
 
    ```bash
    rails credentials:edit
    ```
 
-   Then insert the key in this format:
+   Then insert the keys in this format (replace the replaceme's with generated creds):
 
    ```yaml
+
+    active_record_encryption:
+      primary_key: REPLACEME
+      deterministic_key: REPLACEME
+      key_derivation_salt: REPLACEME
+
    lockbox:
-     master_key: "your_generated_key_here"
+     master_key: REPLACEME
    ```
 
-4. Replace all instances of "REPLACEMEWITHAPPNAME" with your actual application name.
+5. Replace all instances of "REPLACEMEWITHAPPNAME" with your actual application name.
 
-5. Install dependencies:
+6. Install dependencies:
 
    ```bash
    bundle install

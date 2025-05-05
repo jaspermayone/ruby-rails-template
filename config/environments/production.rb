@@ -7,7 +7,7 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.enable_reloading = false
-  
+
   # Prepend all log lines with the following tags.
   config.log_tags = [:request_id]
 
